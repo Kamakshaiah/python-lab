@@ -1,0 +1,66 @@
+
+# work-flow googleSearch class:
+
+Create text files using "googleSearch" module. Can be useful for making titles and links. 
+Concatenate text files using "appendText" inside "litutilities"
+Clean data using "cleandata" module. Useful for creating words/verbs.
+Create "termmat" or "distinctwords" using "litutilities" module. "litutilities" has methods for creating tables and saving them as CSV files. 
+Perform statistical analysis using "literstat" module.
+
+# work-flow litreviewer (gscholar) class:
+
+Create text files using "gscholar" module. Can be useful for making titles and links. 
+Concatenate text files using "appendText" inside "litutilities"
+Clean data using "cleandata" module. Useful for creating words/verbs.
+Create "termmat" or "distinctwords" using "litutilities" module. "litutilities" has methods for creating tables and saving them as CSV files. 
+Perform statistical analysis using "literstat" module.
+
+# functions
+text = 'internet of things for smart cities'
+1. makeQuery(self, text)
+2. getLinks(self, url)
+3. openSource(self, links, **kwargs):
+4. getText(self, links, path, num, savetext=False)
+5. getTitles(self, url)
+6. wordFrequencies(self, titles)
+7. makeDistinctWords(self, title, termmat, length=7)
+8. barChart(self, termmat)
+9. makeTables(dict:data)
+10. saveAsCSVFile(path, dict:data)
+11. twoSampleIndTTest(v1, v2)
+12. boxPlot(pd.DF:data)
+13. computeIQR(pd.DF:data)
+
+
+# process
+
+title = 'internet of things for smart cities'
+gscholar = gScholar(title)
+url = gscholar.makeQuery()
+print(url)
+links = gscholar.getLinks(url)
+print(links) 
+print(len(links))
+for i in links:
+	print(i) 
+gscholar.openSource(links, num=7)
+gscholar.getAbstract(links, num=7)
+titles = gscholar.getTitles(url)
+for i in titles:
+	print(i)
+
+
+# litutilities
+
+appendText(path) 
+wfreq = wordCounts(wwov) 
+termmat = wordFrequencies(titles)
+makeDistinctWords(title, termmat, length=7)
+print(termmat)
+distinctwords = makeDistinctWords(title, termmat)
+print(distinctwords)
+
+# literstat 
+
+barChart(distinctwords)
+

@@ -1,0 +1,4 @@
+git clone https://github.com/Kamakshaiah/python-healthcare-project.git
+git add .
+git commit -m "initial"
+git push -f --set-upstream https://github.com/Kamakshaiah/python-healthcare-project.git main
