@@ -1,3 +1,5 @@
+# https://hcc.unl.edu/docs/attachments/11635089.pdf
+
 conda -V
 conda update conda
 conda create -n envname python=x.x anaconda
