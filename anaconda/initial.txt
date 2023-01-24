@@ -1,0 +1,7 @@
+conda -V
+conda update conda
+conda create -n envname python=x.x anaconda
+conda activate envname
+conda install -n yourenvname package
+conda deactivate
+conda remove -n envname -all
