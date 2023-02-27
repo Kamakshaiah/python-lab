@@ -94,18 +94,22 @@ def twoSampleTTest(x, y, *args):
         print('Sample sizes are not equal')
 
 
-def plotNormal(x):
+def plotNormal(y):
     ''' this method plots normal curve for given data'''
 
     # importing packs
 
     import numpy as np
-    from scipy.stats import norm
+    from scipy import stats
+    import math
     import matplotlib.pyplot as plt
 
     # data transformation
-    y = norm.pdf(x, 0, 1)
-    plt.plot(x, y)
+    mu = 0
+    variance = 1
+    sigma = math.sqrt(variance)
+    x = np.linspace(mu - 3*sigma, mu + 3*sigma, len(y))
+    plt.plot(x, stats.norm.pdf(y, mu, sigma))
     plt.show()
 
 def jbTest(x):
