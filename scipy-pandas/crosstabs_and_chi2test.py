@@ -17,10 +17,16 @@ df = pd.DataFrame({'gender': gender, 'salary': sal_cat})
 df.dtypes
 pd.crosstab(df['gender'], df['salary'])
 
-# other crosstabs
+# other crosstabs (using groupby function)
 
 df.groupby('gender').count() # gender wise table for df
 df.groupby('gender').mean() # gender wise table for numeric vars in df
+
+df.groupby('gender').get_group('male').count()
+df.groupby('gender').get_group('female').count()
+
+df.groupby('gender').get_group('male')
+df.groupby('gender').get_group('female')
 
 import scipy as sp
 sp.stats.chi2_contingency(pd.crosstab(df['gender'], df['salary']))
