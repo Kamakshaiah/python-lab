@@ -28,6 +28,8 @@ df.groupby('gender').get_group('female').count()
 df.groupby('gender').get_group('male')
 df.groupby('gender').get_group('female')
 
+df.groupby('gender').get_group('male')['sal_num'].hist() # histogram
+
 import scipy as sp
 sp.stats.chi2_contingency(pd.crosstab(df['gender'], df['salary']))
 
